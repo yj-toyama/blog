@@ -4,15 +4,37 @@ import Container from 'components/container'
 import PostBody from 'components/post-body'
 import Contact from 'components/contact'
 import { TwoColumn,TwoColumnMain,TwoColumnSidebar } from 'components/two-column'
+import Image from 'next/image'
+import eyecatch from 'images/about.jpg'
+import Meta from 'components/meta'
 
 export default function About() {
   return ( 
   <Container>
+      <Meta
+        pageTitle="アバウト"
+        pageDesc="About development activities"
+        pageImg={eyecatch.src}
+        pageImgW={eyecatch.width}
+        pageImgH={eyecatch.height}
+      />
   <TwoColumn>
 
   <TwoColumnMain>
   <PostBody>
   <Hero  title="About" subtitle="About Development Activity" />
+
+  <figure>
+        <Image
+          src={eyecatch}
+          alt=""
+          layout="responsive"
+          sizes="(min-width: 1152px) 1152px, 100vw"
+          priority
+          placeholder="blur"
+        />
+      </figure>
+
   <p>
     Our Company has great knowledge about IT Architect
   </p>
